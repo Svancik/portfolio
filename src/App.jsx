@@ -1,10 +1,17 @@
-function App() {
+import { Contact } from "./components/Contact";
+import { Hero } from "./components/Hero";
+import { Who } from "./components/Who";
+import { Works } from "./components/Works";
 
+function App() {
   return (
     <div>
-      Hello world!
+      <Hero />
+      <Who />
+      <Works />
+      <Contact />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
