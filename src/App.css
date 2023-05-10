@@ -1,0 +1,13 @@
+.container{
+    height: 100vh;
+    /* pro smooth scrollování použijeme kód níže + kód v komponentách (hero např.) */
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    overflow-y: auto;
+    scrollbar-width: none;
+    color: white;
+    background: url("./img/bg.jpeg");
+    &::-webkit-scrollbar{
+        display: none;
+    }
+}

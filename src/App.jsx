@@ -1,11 +1,12 @@
-import { Contact } from "./components/Contact";
-import { Hero } from "./components/Hero";
-import { Who } from "./components/Who";
-import { Works } from "./components/Works";
+import { Contact } from "./components/Contact/Contact";
+import { Hero } from "./components/Hero/Hero";
+import { Who } from "./components/Who/Who";
+import { Works } from "./components/Works/Works";
+import "./App.css";
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Hero />
       <Who />
       <Works />
