@@ -30,13 +30,39 @@ const List = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 20px;
+  width: 560px;
 `;
 const ListItem = styled.li`
-  font-size: 100px;
+  font-size: 80px;
   font-weight: bold;
   cursor: pointer;
   color: transparent;
   -webkit-text-stroke: 1px white;
+
+  position: relative;
+
+  ::after {
+    content: "${(props) => props.text}";
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: whitesmoke;
+    width: 0px; //zde jsme nastavili width = 0px a níže v keyframes animaci změníme width na 100% - tím se vytvoří proces animace
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  &:hover {
+    ::after {
+      animation: moveText 0.5s linear both; //díky příznaku both zůstane animace v konečném stavu
+
+      @keyframes moveText {
+        to {
+          width: 100%;
+        }
+      }
+    }
+  }
 `;
 const Right = styled.div`
   flex: 1;
@@ -49,7 +75,9 @@ export const Works = () => {
         <Left>
           <List>
             {data.map((item) => (
-              <ListItem key={item}>{item}</ListItem>
+              <ListItem key={item} text={item}>
+                {item}
+              </ListItem>
             ))}
           </List>
         </Left>
