@@ -6,7 +6,6 @@ import {
   Annotation,
   ZoomableGroup,
 } from "react-simple-maps";
-import geoData from "../../public/features.json";
 
 const Map = () => {
   return (
@@ -15,12 +14,13 @@ const Map = () => {
       projectionConfig={{
         rotate: [-10.0, -52.0, 0],
         center: [-5, -3],
-        scale: 1100,
+        scale: 1600 /* Pomocí scale nastavíme jak se zoomne mapa*/,
       }}
+      style={{ width: "100%", height: "100%" }}
     >
       <Geographies
-        geography={geoData}
-        fill="#D6D6DA"
+        geography="/features.json"
+        fill="#2C065D"
         stroke="#FFFFFF"
         strokeWidth={0.5}
       >
@@ -31,17 +31,23 @@ const Map = () => {
         }
       </Geographies>
       <Annotation
-        subject={[2.3522, 48.8566]}
+        subject={[14.237696, 50.4201216]}
         dx={-90}
         dy={-30}
         connectorProps={{
-          stroke: "#FF5533",
-          strokeWidth: 3,
+          stroke: "white",
+          strokeWidth: 2,
           strokeLinecap: "round",
         }}
       >
-        <text x="-8" textAnchor="end" alignmentBaseline="middle" fill="#F53">
-          {"Prague"}
+        <text
+          x="10"
+          y="-20"
+          textAnchor="middle"
+          alignmentBaseline="middle"
+          fill="white"
+        >
+          {"I live in Roudnice nad Labem"}
         </text>
       </Annotation>
     </ComposableMap>
