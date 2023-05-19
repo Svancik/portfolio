@@ -1,4 +1,5 @@
 import React from "react";
+import Map from "./Map";
 import styled from "styled-components";
 
 const Section = styled.div`
@@ -73,7 +74,9 @@ export const Contact = () => {
             <Button>Send</Button>
           </Form>
         </Left>
-        <Right></Right>
+        <Right>
+          <Map />
+        </Right>
       </Container>
     </Section>
   );
