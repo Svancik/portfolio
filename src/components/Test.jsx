@@ -1,5 +1,6 @@
-import { OrbitControls, RenderTexture, Text } from "@react-three/drei";
+import { OrbitControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
+import { Cube } from './Cube';
 import React from "react";
 import styled from "styled-components";
 
@@ -16,17 +17,7 @@ export const Test = () => {
         <OrbitControls enableZoom={false} />
         <ambientLight intensity={1} />
         <directionalLight position={(3, 2, 1)} />
-        <mesh>
-          <boxGeometry args={[1, 1, 1]} />
-          <meshStandardMaterial color="white">
-            <RenderTexture attach="map">
-              <color attach="background" args={["pink"]} />
-              <Text fontSize={3} color="#555">
-                hello
-              </Text>
-            </RenderTexture>
-          </meshStandardMaterial>
-        </mesh>
+        <Cube />
       </Canvas>
     </Container>
   );
