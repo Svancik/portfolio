@@ -17,6 +17,10 @@ const Section = styled.div`
   scroll-snap-align: center;
   display: flex;
   justify-content: center;
+  position: relative;
+  color: black;
+  font-size: 14px;
+  font-weight: 300;
 `;
 const Container = styled.div`
   height: 1400px;
@@ -35,6 +39,17 @@ const List = styled.ul`
   gap: 20px;
   width: 560px;
 `;
+
+const Desc = styled.div`
+  width: 200px;
+  height: 70px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: absolute;
+  top: 100px;
+`;
+
 const ListItem = styled.li`
   font-size: 80px;
   font-weight: bold;
